@@ -57,6 +57,7 @@
                         <outlet property="btnCreateUser" destination="xa6-LB-7BS" id="DCe-dY-W7C"/>
                         <outlet property="tblUserList" destination="q7K-46-aTM" id="kLE-EA-r9R"/>
                         <segue destination="zUe-cH-iDA" kind="show" identifier="CreateUserVC" id="amR-qc-nRS"/>
+                        <segue destination="wGq-vp-SJj" kind="show" identifier="PostVC" id="f20-Nd-JKK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -165,10 +166,146 @@
             </objects>
             <point key="canvasLocation" x="121.73913043478262" y="98.4375"/>
         </scene>
+        <!--PostVC-->
+        <scene sceneID="cmn-Z3-NAZ">
+            <objects>
+                <viewController id="wGq-vp-SJj" customClass="PostVC" customModule="DummyAPi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gv6-vh-03E">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Fou-RA-IKj">
+                                <rect key="frame" x="0.0" y="88" width="414" height="724"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" name="themeBlue"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="wGq-vp-SJj" id="faJ-AS-k1o"/>
+                                    <outlet property="delegate" destination="wGq-vp-SJj" id="SmU-iy-744"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87a-dd-Ndy" customClass="AppButton" customModule="DummyAPi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hMB-U7-nBW"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nyg-oo-LjR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fou-RA-IKj" firstAttribute="top" secondItem="Nyg-oo-LjR" secondAttribute="top" id="6W3-xF-7vi"/>
+                            <constraint firstItem="Fou-RA-IKj" firstAttribute="leading" secondItem="Nyg-oo-LjR" secondAttribute="leading" id="E8C-aS-rzt"/>
+                            <constraint firstItem="87a-dd-Ndy" firstAttribute="top" secondItem="Fou-RA-IKj" secondAttribute="bottom" id="RDz-Kh-COt"/>
+                            <constraint firstItem="Nyg-oo-LjR" firstAttribute="trailing" secondItem="Fou-RA-IKj" secondAttribute="trailing" id="bcf-uR-9IK"/>
+                            <constraint firstItem="87a-dd-Ndy" firstAttribute="leading" secondItem="Nyg-oo-LjR" secondAttribute="leading" id="kgk-45-Xp7"/>
+                            <constraint firstItem="Nyg-oo-LjR" firstAttribute="trailing" secondItem="87a-dd-Ndy" secondAttribute="trailing" id="mEF-zm-GDS"/>
+                            <constraint firstItem="Nyg-oo-LjR" firstAttribute="bottom" secondItem="87a-dd-Ndy" secondAttribute="bottom" id="xXK-5a-yEk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nf0-9j-Gta"/>
+                    <connections>
+                        <outlet property="tblPost" destination="Fou-RA-IKj" id="xAG-CJ-FU8"/>
+                        <segue destination="weX-Cf-sRf" kind="show" identifier="CreateUserVC" id="tCN-Z5-pGT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1lc-zb-hPF" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="835" y="870"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IMy-Zv-1YP">
+            <objects>
+                <viewController id="weX-Cf-sRf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7vU-PD-5QX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="oIj-U9-2JL">
+                                <rect key="frame" x="12" y="103" width="390" height="232"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nxW-Ae-SRi" customClass="AppTextField" customModule="DummyAPi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="dhk-6n-KJd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yOs-fi-KKd" customClass="AppTextField" customModule="DummyAPi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="90" width="390" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iY9-Uy-p0q" customClass="AppTextField" customModule="DummyAPi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="180" width="390" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLQ-pj-L5F" customClass="AppButton" customModule="DummyAPi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="810" width="414" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="0gY-Vc-N7c"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                                <connections>
+                                    <action selector="btnCreateUpdatePress:" destination="weX-Cf-sRf" eventType="touchUpInside" id="ETp-1Y-HKb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8GM-Xr-ATn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8GM-Xr-ATn" firstAttribute="trailing" secondItem="OLQ-pj-L5F" secondAttribute="trailing" id="FTy-qO-jbn"/>
+                            <constraint firstItem="oIj-U9-2JL" firstAttribute="leading" secondItem="8GM-Xr-ATn" secondAttribute="leading" constant="12" id="FW7-Mi-hgj"/>
+                            <constraint firstItem="oIj-U9-2JL" firstAttribute="top" secondItem="8GM-Xr-ATn" secondAttribute="top" constant="15" id="Nh8-xF-E9w"/>
+                            <constraint firstItem="8GM-Xr-ATn" firstAttribute="trailing" secondItem="oIj-U9-2JL" secondAttribute="trailing" constant="12" id="SsE-4y-4Ph"/>
+                            <constraint firstItem="8GM-Xr-ATn" firstAttribute="bottom" secondItem="OLQ-pj-L5F" secondAttribute="bottom" id="dYE-Tu-x9K"/>
+                            <constraint firstItem="OLQ-pj-L5F" firstAttribute="leading" secondItem="8GM-Xr-ATn" secondAttribute="leading" id="ioH-Ss-ger"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Sgj-Lf-E15">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="trash" id="w9L-FP-i4T"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnCreateorUpdate" destination="OLQ-pj-L5F" id="Abg-Dj-weJ"/>
+                        <outlet property="btnDelete" destination="w9L-FP-i4T" id="kBg-2r-93b"/>
+                        <outlet property="txtEmail" destination="iY9-Uy-p0q" id="2qH-OC-yZL"/>
+                        <outlet property="txtFirstName" destination="nxW-Ae-SRi" id="DxE-Pq-sIk"/>
+                        <outlet property="txtLastName" destination="yOs-fi-KKd" id="4hQ-qa-xqr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sCE-cu-YXV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1706" y="839"/>
+        </scene>
     </scenes>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="themeBlue">
+            <color red="0.043000001460313797" green="0.20000000298023224" blue="0.30199998617172241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

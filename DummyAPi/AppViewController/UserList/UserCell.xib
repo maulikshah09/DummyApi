@@ -38,21 +38,39 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pKN-Sk-WXt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pKN-Sk-WXt">
                                 <rect key="frame" x="10" y="12" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="XAg-Uv-sCz"/>
                                     <constraint firstAttribute="width" constant="100" id="rwd-vc-TyX"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ScW-Tb-rRN">
+                                <rect key="frame" x="120" y="73" width="166" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZd-zo-g7z">
+                                        <rect key="frame" x="0.0" y="0.0" width="78" height="48"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="View Info"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erN-DP-9BQ">
+                                        <rect key="frame" x="88" y="0.0" width="78" height="48"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="User Post"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ScW-Tb-rRN" firstAttribute="leading" secondItem="8I3-5B-mYE" secondAttribute="leading" id="52o-fF-DPf"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="pKN-Sk-WXt" secondAttribute="bottom" constant="12" id="6aQ-RV-Ag6"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ScW-Tb-rRN" secondAttribute="bottom" constant="10" id="D59-14-tGC"/>
                             <constraint firstItem="8I3-5B-mYE" firstAttribute="top" secondItem="pKN-Sk-WXt" secondAttribute="top" id="FCb-L0-r3T"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8I3-5B-mYE" secondAttribute="bottom" constant="12" id="GYS-yK-nzP"/>
                             <constraint firstItem="8I3-5B-mYE" firstAttribute="leading" secondItem="pKN-Sk-WXt" secondAttribute="trailing" constant="10" id="Kg8-GY-bDg"/>
                             <constraint firstAttribute="trailing" secondItem="8I3-5B-mYE" secondAttribute="trailing" constant="10" id="X2y-Ty-SzO"/>
+                            <constraint firstAttribute="trailing" secondItem="ScW-Tb-rRN" secondAttribute="trailing" constant="10" id="jSh-Fn-Qvm"/>
+                            <constraint firstItem="ScW-Tb-rRN" firstAttribute="top" secondItem="8I3-5B-mYE" secondAttribute="bottom" constant="10" id="opR-CA-XI0"/>
                             <constraint firstItem="pKN-Sk-WXt" firstAttribute="top" secondItem="fNI-NE-oCe" secondAttribute="top" constant="12" id="pDp-eM-k92"/>
                             <constraint firstItem="pKN-Sk-WXt" firstAttribute="leading" secondItem="fNI-NE-oCe" secondAttribute="leading" constant="10" id="xjh-iW-vx3"/>
                         </constraints>
@@ -67,6 +85,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnUserPost" destination="erN-DP-9BQ" id="oxz-I7-H31"/>
+                <outlet property="btnViewInfo" destination="NZd-zo-g7z" id="tkF-MD-5gq"/>
                 <outlet property="imgUser" destination="pKN-Sk-WXt" id="XJv-bS-rvy"/>
                 <outlet property="lblFirstName" destination="0jV-nm-UZp" id="iCV-8z-tBB"/>
                 <outlet property="lblLastName" destination="wOz-ej-4kJ" id="IH2-Rt-YFl"/>

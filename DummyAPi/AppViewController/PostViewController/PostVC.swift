@@ -6,20 +6,18 @@
 //
 
 import UIKit
-import CoreLocation
-
-class ViewController: UIViewController {
+ 
+class PostVC: UIViewController {
     
-
     var info : UserListModel?
-    var arrUserList : [UserListModel]?
+    var arrPostList : [PostListModel]?
     var currentPage = 0
     var totalPages = 0
     var circularSpinner = TJSpinner()
     var isUpdate = false
     
-    @IBOutlet weak var btnCreateUser: AppButton!
-    @IBOutlet weak var tblUserList: UITableView!
+   // @IBOutlet weak var btnCreateUser: AppButton!
+    @IBOutlet weak var tblPost: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +26,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         currentPage = 0
-        callWebservice(#selector(getUserList), forTarget: self)
+        callWebservice(#selector(getPostList), forTarget: self)
     }
   
     @IBAction func btnCreateUserPress(_ sender: Any) {
@@ -38,13 +36,11 @@ class ViewController: UIViewController {
 }
 
 // MARK:-  ----------- Functions -------------
-extension ViewController {
+extension PostVC {
     func setup(){
         self.title = AppNavigationTitle.ListUser.localized
-        btnCreateUser.setTitle(AlertTitle.createUser.localized, for: .normal)
-       
-        tblUserList.register(cellType: UserCell.self, bundle: nil)
-        tblUserList.register(cellType: LoadMoreTableViewCell.self, bundle: nil)
+        tblPost.register(cellType: PostCell.self, bundle: nil)
+        tblPost.register(cellType: LoadMoreTableViewCell.self, bundle: nil)
         
         circularSpinner = TJSpinner.init(spinnerType: "TJCircularSpinner")
     }
@@ -53,25 +49,25 @@ extension ViewController {
         if segue.identifier == CreateUserVC.className {
             let detail = segue.destination as? CreateUserVC
             detail?.userInfo = info
-        }else if  segue.identifier == PostVC.className {
-            let detail = segue.destination as? PostVC
-            detail?.info = info
         }
     }
     
     @objc func viewProfile(sender : UIButton){
-        info = arrUserList?[sender.tag]
+     //   info = arrPostList?[sender.tag]
         self.performSegue(withIdentifier:CreateUserVC.className , sender: self)
     }
     
     @objc func viewPost(sender : UIButton){
-        info = arrUserList?[sender.tag]
-        self.performSegue(withIdentifier:PostVC.className , sender: self)
+        
     }
 }
 
 //MARK:-  ----------- Tableview Methods -------------
-extension ViewController : UITableViewDelegate,UITableViewDataSource {
+extension PostVC : UITableViewDelegate,UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
    
     func numberOfSections(in tableView: UITableView) -> Int {
         if (currentPage < totalPages){
@@ -84,7 +80,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return arrUserList?.count ?? 0
+            return arrPostList?.count ?? 0
         }else{
             return 1
         }
@@ -94,25 +90,21 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
         if indexPath.section == 0 {
             return userListCell(indexPath: indexPath)
         }else{
-            self.callWebservice(#selector(self.getUserList), forTarget: self)
+            self.callWebservice(#selector(self.getPostList), forTarget: self)
             return loadingCell(indexPath: indexPath)
         }
     }
     
-    func userListCell(indexPath : IndexPath) -> UserCell{
-        let cell = tblUserList.dequeueReusableCell(with: UserCell.self, for: indexPath)
-        cell.setUserInfo(info: arrUserList?[indexPath.row] ?? UserListModel())
-        cell.btnUserPost.tag = indexPath.row
-        cell.btnViewInfo.tag = indexPath.row
-        cell.btnUserPost.addTarget(self, action: #selector(viewPost), for: .touchUpInside)
-        cell.btnViewInfo.addTarget(self, action: #selector(viewProfile), for: .touchUpInside)
+    func userListCell(indexPath : IndexPath) -> PostCell{
+        let cell = tblPost.dequeueReusableCell(with: PostCell.self, for: indexPath)
+        cell.setupPost(info: arrPostList?[indexPath.row] ?? PostListModel())
         cell.selectionStyle = .none
         return cell
     }
    
     func loadingCell(indexPath: IndexPath) -> LoadMoreTableViewCell {
     
-        let cell = self.tblUserList.dequeueReusableCell(with:LoadMoreTableViewCell.self , for: indexPath)
+        let cell = self.tblPost.dequeueReusableCell(with:LoadMoreTableViewCell.self , for: indexPath)
                                         
         cell.backgroundColor = UIColor.clear
         cell.contentView.backgroundColor = UIColor.clear
@@ -135,23 +127,23 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
 
 
 //MARK:-  ----------- Api Calling -------------
-extension ViewController {
-    @objc func getUserList() {
+extension PostVC {
+    @objc func getPostList() {
         
-        let myUrl = URL(string: AppUrls.getUserList.raw)
+        let myUrl = URL(string: BASE_URL + "user/\(info?.id ?? "0")/post")
         var components = URLComponents(url: myUrl!, resolvingAgainstBaseURL: false)
         
         components?.queryItems = [
             URLQueryItem(name: "page" , value: "\(self.currentPage)")
         ]
         
-        URLSession.shared.request(url:  components?.url?.absoluteString ?? "", isShowHUD: self.currentPage == 0 ? true : false, headerInfo: headerInfo, method: .get, parmeters:nil , decodeClass: UserModel.self) {[weak self] response, error in
+        URLSession.shared.request(url:  components?.url?.absoluteString ?? "", isShowHUD: self.currentPage == 0 ? true : false, headerInfo: headerInfo, method: .get, parmeters:nil , decodeClass: PostModel.self) {[weak self] response, error in
             if let res = response{
                 if res.data?.count ?? 0 > 0 {
                     if self?.currentPage == 0 {
-                        self?.arrUserList = res.data ?? [UserListModel]()
+                        self?.arrPostList = res.data ?? [PostListModel]()
                     }else{
-                        self?.arrUserList?.append(contentsOf: res.data ?? [UserListModel]())
+                        self?.arrPostList?.append(contentsOf: res.data ?? [PostListModel]())
                     }
                     self?.currentPage = (self?.currentPage ?? 0) + 1
                     self?.totalPages = res.total ?? 0
@@ -160,7 +152,7 @@ extension ViewController {
                     self?.currentPage = self?.totalPages ?? 0
                 }
                 DispatchQueue.main.async {
-                    self?.tblUserList.reloadData()
+                    self?.tblPost.reloadData()
                 }
             }else{
                 print(AppMessage.somthingWantWrng.localized)

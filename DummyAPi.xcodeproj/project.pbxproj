@@ -19,6 +19,11 @@
 		4D1AAFD727AE83C3007F0EC2 /* CreateUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1AAFD627AE83C3007F0EC2 /* CreateUserVC.swift */; };
 		4D1AAFDA27AE8504007F0EC2 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1AAFD927AE8504007F0EC2 /* AppButton.swift */; };
 		4D1AAFDC27AE8D61007F0EC2 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1AAFDB27AE8D61007F0EC2 /* AppTextField.swift */; };
+		4D1AAFDF27AE9D1B007F0EC2 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1AAFDE27AE9D1B007F0EC2 /* PostVC.swift */; };
+		4D1AAFE627AEA184007F0EC2 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1AAFE427AEA184007F0EC2 /* PostCell.swift */; };
+		4D1AAFE727AEA184007F0EC2 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1AAFE527AEA184007F0EC2 /* PostCell.xib */; };
+		4D1AAFEA27AEA41F007F0EC2 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1AAFE827AEA41F007F0EC2 /* TagCell.swift */; };
+		4D1AAFEB27AEA41F007F0EC2 /* TagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1AAFE927AEA41F007F0EC2 /* TagCell.xib */; };
 		4DDE9BA627AE5CC700C7EA55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDE9BA527AE5CC700C7EA55 /* AppDelegate.swift */; };
 		4DDE9BAA27AE5CC700C7EA55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDE9BA927AE5CC700C7EA55 /* ViewController.swift */; };
 		4DDE9BAD27AE5CC700C7EA55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DDE9BAB27AE5CC700C7EA55 /* Main.storyboard */; };
@@ -51,6 +56,11 @@
 		4D1AAFD627AE83C3007F0EC2 /* CreateUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserVC.swift; sourceTree = "<group>"; };
 		4D1AAFD927AE8504007F0EC2 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		4D1AAFDB27AE8D61007F0EC2 /* AppTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
+		4D1AAFDE27AE9D1B007F0EC2 /* PostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
+		4D1AAFE427AEA184007F0EC2 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		4D1AAFE527AEA184007F0EC2 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		4D1AAFE827AEA41F007F0EC2 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
+		4D1AAFE927AEA41F007F0EC2 /* TagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCell.xib; sourceTree = "<group>"; };
 		4DDE9BA227AE5CC700C7EA55 /* DummyAPi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DummyAPi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDE9BA527AE5CC700C7EA55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DDE9BA927AE5CC700C7EA55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +138,18 @@
 			path = CreateUser;
 			sourceTree = "<group>";
 		};
+		4D1AAFDD27AE9D08007F0EC2 /* PostViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4D1AAFDE27AE9D1B007F0EC2 /* PostVC.swift */,
+				4D1AAFE427AEA184007F0EC2 /* PostCell.swift */,
+				4D1AAFE527AEA184007F0EC2 /* PostCell.xib */,
+				4D1AAFE827AEA41F007F0EC2 /* TagCell.swift */,
+				4D1AAFE927AEA41F007F0EC2 /* TagCell.xib */,
+			);
+			path = PostViewController;
+			sourceTree = "<group>";
+		};
 		4DDE9B9927AE5CC700C7EA55 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +216,7 @@
 		4DDE9BBB27AE5E9700C7EA55 /* AppViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4D1AAFDD27AE9D08007F0EC2 /* PostViewController */,
 				4D1AAFD527AE83A1007F0EC2 /* CreateUser */,
 				4D1AAFC427AE7091007F0EC2 /* UserList */,
 			);
@@ -277,8 +300,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D1AAFCC27AE7A24007F0EC2 /* LoadMoreTableViewCell.xib in Resources */,
+				4D1AAFE727AEA184007F0EC2 /* PostCell.xib in Resources */,
 				4D1AAFC927AE70AC007F0EC2 /* UserCell.xib in Resources */,
 				4DDE9BB227AE5CC800C7EA55 /* LaunchScreen.storyboard in Resources */,
+				4D1AAFEB27AEA41F007F0EC2 /* TagCell.xib in Resources */,
 				4DDE9BAF27AE5CC800C7EA55 /* Assets.xcassets in Resources */,
 				4DDE9BAD27AE5CC700C7EA55 /* Main.storyboard in Resources */,
 			);
@@ -349,8 +374,11 @@
 				4D1AAFC027AE6B22007F0EC2 /* UIViewControllerExt.swift in Sources */,
 				4D1AAFCD27AE7A24007F0EC2 /* LoadMoreTableViewCell.swift in Sources */,
 				4D1AAFDC27AE8D61007F0EC2 /* AppTextField.swift in Sources */,
+				4D1AAFEA27AEA41F007F0EC2 /* TagCell.swift in Sources */,
 				4DDE9BBE27AE5EDC00C7EA55 /* ImportFramework.swift in Sources */,
 				4D1AAFD727AE83C3007F0EC2 /* CreateUserVC.swift in Sources */,
+				4D1AAFDF27AE9D1B007F0EC2 /* PostVC.swift in Sources */,
+				4D1AAFE627AEA184007F0EC2 /* PostCell.swift in Sources */,
 				4DDE9BC027AE5F1800C7EA55 /* AppModel.swift in Sources */,
 				4D1AAFBC27AE6709007F0EC2 /* Enums.swift in Sources */,
 			);

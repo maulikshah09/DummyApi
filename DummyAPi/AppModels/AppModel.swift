@@ -53,5 +53,24 @@ struct LocationModel: Decodable {
     var city,country,state,street,timezone : String?
 }
  
- 
+struct PostModel : Decodable {
+    var total,page,limit: Int?
+    var data :[PostListModel]?
+}
+
+struct PostListModel : Decodable {
+    var id,image,text : String?
+    var likes : Double?
+    var owner :OwnerModel?
+    var tags : [String]?
+}
+
+struct OwnerModel : Decodable {
+    var firstName,
+        id,
+        lastName,
+        picture,
+        title : String?
+}
+
 
