@@ -36,11 +36,12 @@ class PostCell: UITableViewCell {
         let url = URL(string: info.image ?? "")
         self.imgPost.sd_setImage(with:url , placeholderImage: UIImage(named: "ic_UserPlaceHolder"))
         self.lblPostName.text = info.text ?? ""
-        self.lblLikes.text = "\(info.likes ?? 0.0)"
+        self.lblLikes.text = "\(info.likes ?? 0.0) Likes"
         arrTags = info.tags ?? [String]()
         self.cvTags.reloadData()
         self.cvTags.layoutIfNeeded()
         self.layoutIfNeeded()
+        
     }
 }
 
