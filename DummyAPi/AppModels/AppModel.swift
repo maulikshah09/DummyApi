@@ -45,7 +45,13 @@ struct UserModel : Decodable {
 }
 
 struct UserListModel : Decodable{
-    var firstName,id,lastName,picture,title : String?
+    var firstName,id,lastName,picture,title,dateOfBirth,email,gender,phone : String?
+    var location :LocationModel?
 }
 
+struct LocationModel: Decodable {
+    var city,country,state,street,timezone : String?
+}
  
+ 
+

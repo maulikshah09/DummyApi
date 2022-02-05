@@ -25,7 +25,8 @@ let apiVersion2 = "v2/"
 enum AppUrls : String {
     
     case getUserList                    = "user"
-
+    case createUser                     = "user/create"
+    
     var raw: String {
         return  BASE_URL + self.rawValue
     }

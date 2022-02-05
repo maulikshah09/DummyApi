@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="q7K-46-aTM">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="724"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" name="AccentColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
@@ -28,24 +28,124 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="XY2-Am-biU"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xa6-LB-7BS" customClass="AppButton" customModule="DummyAPi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uMZ-zU-hep"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                                <connections>
+                                    <action selector="btnCreateUserPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BsD-8F-K7p"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="q7K-46-aTM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4mk-ic-S1R"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="q7K-46-aTM" secondAttribute="bottom" id="GVM-I7-jQR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xa6-LB-7BS" secondAttribute="bottom" id="7Ds-LT-v6Y"/>
+                            <constraint firstItem="xa6-LB-7BS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KJ9-yG-kof"/>
                             <constraint firstItem="q7K-46-aTM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Z16-A5-RQl"/>
+                            <constraint firstItem="xa6-LB-7BS" firstAttribute="top" secondItem="q7K-46-aTM" secondAttribute="bottom" id="eOY-7z-VH1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xa6-LB-7BS" secondAttribute="trailing" id="ib4-Si-zKc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q7K-46-aTM" secondAttribute="trailing" id="itk-Fv-0iy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vqm-HY-eN7"/>
                     <connections>
+                        <outlet property="btnCreateUser" destination="xa6-LB-7BS" id="DCe-dY-W7C"/>
                         <outlet property="tblUserList" destination="q7K-46-aTM" id="kLE-EA-r9R"/>
+                        <segue destination="zUe-cH-iDA" kind="show" identifier="CreateUserVC" id="amR-qc-nRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031.8840579710145" y="98.4375"/>
+            <point key="canvasLocation" x="835" y="98"/>
+        </scene>
+        <!--Create UserVC-->
+        <scene sceneID="gak-2y-R95">
+            <objects>
+                <viewController id="zUe-cH-iDA" customClass="CreateUserVC" customModule="DummyAPi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g9H-LD-GHB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="DgI-lU-5Gi">
+                                <rect key="frame" x="12" y="103" width="390" height="232"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fag-nF-R6Z" customClass="AppTextField" customModule="DummyAPi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="xwC-lM-r7e"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kzu-Qx-lwf" customClass="AppTextField" customModule="DummyAPi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="90" width="390" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sc2-7T-BP3" customClass="AppTextField" customModule="DummyAPi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="180" width="390" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coJ-qr-NGU" customClass="AppButton" customModule="DummyAPi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="810" width="414" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="87I-zE-QZA"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                                <connections>
+                                    <action selector="btnCreateUpdatePress:" destination="zUe-cH-iDA" eventType="touchUpInside" id="tHR-2n-zjn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="y3i-BP-IJB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DgI-lU-5Gi" firstAttribute="top" secondItem="y3i-BP-IJB" secondAttribute="top" constant="15" id="8jd-1i-Da7"/>
+                            <constraint firstItem="y3i-BP-IJB" firstAttribute="bottom" secondItem="coJ-qr-NGU" secondAttribute="bottom" id="DM7-MW-jwY"/>
+                            <constraint firstItem="y3i-BP-IJB" firstAttribute="trailing" secondItem="coJ-qr-NGU" secondAttribute="trailing" id="Gwa-1E-lLR"/>
+                            <constraint firstItem="DgI-lU-5Gi" firstAttribute="leading" secondItem="y3i-BP-IJB" secondAttribute="leading" constant="12" id="Rz3-5e-wus"/>
+                            <constraint firstItem="y3i-BP-IJB" firstAttribute="trailing" secondItem="DgI-lU-5Gi" secondAttribute="trailing" constant="12" id="Yr4-IR-G1J"/>
+                            <constraint firstItem="coJ-qr-NGU" firstAttribute="leading" secondItem="y3i-BP-IJB" secondAttribute="leading" id="oeg-oP-Bp1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="u3m-nT-3LT">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="trash" id="nxU-nk-J4z"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnCreateorUpdate" destination="coJ-qr-NGU" id="Upq-Ci-Pgb"/>
+                        <outlet property="btnDelete" destination="nxU-nk-J4z" id="Mbx-J7-bhs"/>
+                        <outlet property="txtEmail" destination="Sc2-7T-BP3" id="TtY-9O-Ogk"/>
+                        <outlet property="txtFirstName" destination="fag-nF-R6Z" id="4YU-Kp-iJN"/>
+                        <outlet property="txtLastName" destination="Kzu-Qx-lwf" id="JLp-Ck-QA8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wXU-lb-QrS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1705.7971014492755" y="83.705357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1oX-FK-Wlq">

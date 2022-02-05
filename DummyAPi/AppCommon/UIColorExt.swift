@@ -29,15 +29,7 @@ extension UIColor {
         return UIColor(named: "CardColor")!
     }
     
-    class func appBtnColor() -> UIColor {
-        return UIColor(named: "AppBtnColor")!
-    }
   
-    class func appShadowColor() -> UIColor {
-        return UIColor(named: "ShadowColor")!
-    }
-    
-    
    
     class func rgb(fromHex: Int) -> UIColor {
         

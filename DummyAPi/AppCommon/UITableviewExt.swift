@@ -82,4 +82,8 @@ public extension String {
         }
         return nil
     }
+    
+    var trim : String {
+        return self.trimmingCharacters(in: CharacterSet.whitespaces)
+    }
 }

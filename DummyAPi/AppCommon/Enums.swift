@@ -32,7 +32,9 @@ enum AlertTitle : String {
     case cancel                = "Cancel"
     case yes                   = "Yes"
     case no                    = "No"
- 
+    case createUser            = "Create User"
+    case updateUser            = "Update User"
+    
     var localized: String {
         return self.rawValue //.localized
     }
@@ -47,6 +49,10 @@ enum AppMessage: String{
     case microPhonePermission    = "MicroPhone permission is not allowed. Please go to settings and allow permission"
     case noInternet              = "No Internet Connection. Please Try Again"
     case somthingWantWrng        = "Something Wrong.Please try again"
+    
+    case firstName               = "Please enter first name"
+    case lastName                = "Please enter last name"
+    case email                   = "Please enter email"
     
     var localized: String {
         return self.rawValue ///.localized

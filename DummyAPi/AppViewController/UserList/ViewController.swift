@@ -10,16 +10,29 @@ import CoreLocation
 
 class ViewController: UIViewController {
     
+    var info : UserListModel?
     var arrUserList : [UserListModel]?
     var currentPage = 0
     var totalPages = 0
     var circularSpinner = TJSpinner()
+    var isUpdate = false
     
+    @IBOutlet weak var btnCreateUser: AppButton!
     @IBOutlet weak var tblUserList: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        currentPage = 0
+        callWebservice(#selector(getUserList), forTarget: self)
+    }
+  
+    @IBAction func btnCreateUserPress(_ sender: Any) {
+        info = nil
+        self.performSegue(withIdentifier: CreateUserVC.className, sender: self)
     }
 }
 
@@ -27,11 +40,19 @@ class ViewController: UIViewController {
 extension ViewController {
     func setup(){
         self.title = AppNavigationTitle.ListUser.localized
-        callWebservice(#selector(getUserList), forTarget: self)
+        btnCreateUser.setTitle(AlertTitle.createUser.localized, for: .normal)
+       
         tblUserList.register(cellType: UserCell.self, bundle: nil)
         tblUserList.register(cellType: LoadMoreTableViewCell.self, bundle: nil)
         
         circularSpinner = TJSpinner.init(spinnerType: "TJCircularSpinner")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == CreateUserVC.className {
+            let detail = segue.destination as? CreateUserVC
+            detail?.userInfo = info
+        }
     }
 }
 
@@ -62,6 +83,11 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
             self.callWebservice(#selector(self.getUserList), forTarget: self)
             return loadingCell(indexPath: indexPath)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        info = arrUserList?[indexPath.row]
+        self.performSegue(withIdentifier:CreateUserVC.className , sender: self)
     }
     
     func userListCell(indexPath : IndexPath) -> UserCell{
