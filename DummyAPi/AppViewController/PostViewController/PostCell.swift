@@ -13,6 +13,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var lblLikes: UILabel!
     @IBOutlet weak var cvTags: UICollectionView!
     @IBOutlet weak var imgPost: UIImageView!
+    @IBOutlet weak var cvHeight: NSLayoutConstraint!
     
     var arrTags = [String]()
     
@@ -38,11 +39,22 @@ class PostCell: UITableViewCell {
         self.lblLikes.text = "\(info.likes ?? 0.0)"
         arrTags = info.tags ?? [String]()
         self.cvTags.reloadData()
+        self.cvTags.layoutIfNeeded()
+        self.layoutIfNeeded()
     }
 }
 
-extension PostCell : UICollectionViewDelegate,UICollectionViewDataSource {
+extension PostCell : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
   
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let item = arrTags[indexPath.row]
+        let itemSize = item.size(withAttributes: [
+            NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14)
+        ])
+        return CGSize(width: itemSize.width + 40, height: itemSize.height + 50)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrTags.count
     }

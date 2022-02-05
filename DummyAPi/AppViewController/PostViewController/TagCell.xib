@@ -19,11 +19,11 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOb-wI-ewo">
-                        <rect key="frame" x="10" y="10" width="167" height="43"/>
+                        <rect key="frame" x="5" y="10" width="177" height="43"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgC-nL-z8I">
-                                <rect key="frame" x="10" y="10" width="147" height="23"/>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="16"/>
+                                <rect key="frame" x="5" y="10" width="167" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -31,8 +31,8 @@
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstItem="pgC-nL-z8I" firstAttribute="top" secondItem="yOb-wI-ewo" secondAttribute="top" constant="10" id="HSE-8P-2FL"/>
-                            <constraint firstAttribute="trailing" secondItem="pgC-nL-z8I" secondAttribute="trailing" constant="10" id="OqN-Xn-dNM"/>
-                            <constraint firstItem="pgC-nL-z8I" firstAttribute="leading" secondItem="yOb-wI-ewo" secondAttribute="leading" constant="10" id="Rtv-Gg-GLe"/>
+                            <constraint firstAttribute="trailing" secondItem="pgC-nL-z8I" secondAttribute="trailing" constant="5" id="OqN-Xn-dNM"/>
+                            <constraint firstItem="pgC-nL-z8I" firstAttribute="leading" secondItem="yOb-wI-ewo" secondAttribute="leading" constant="5" id="Rtv-Gg-GLe"/>
                             <constraint firstAttribute="bottom" secondItem="pgC-nL-z8I" secondAttribute="bottom" constant="10" id="tOe-sd-sy2"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -45,8 +45,8 @@
             <constraints>
                 <constraint firstItem="yOb-wI-ewo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="6d6-fQ-TK5"/>
                 <constraint firstAttribute="bottom" secondItem="yOb-wI-ewo" secondAttribute="bottom" constant="10" id="Eg7-O0-Tgm"/>
-                <constraint firstAttribute="trailing" secondItem="yOb-wI-ewo" secondAttribute="trailing" constant="10" id="R01-Mh-cZ2"/>
-                <constraint firstItem="yOb-wI-ewo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Xuy-Yq-zdq"/>
+                <constraint firstAttribute="trailing" secondItem="yOb-wI-ewo" secondAttribute="trailing" constant="5" id="R01-Mh-cZ2"/>
+                <constraint firstItem="yOb-wI-ewo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Xuy-Yq-zdq"/>
             </constraints>
             <size key="customSize" width="187" height="63"/>
             <connections>
