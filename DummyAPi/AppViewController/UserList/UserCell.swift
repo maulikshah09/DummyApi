@@ -19,11 +19,15 @@ class UserCell: UITableViewCell {
         // Initialization code
         self.outterView.layer.masksToBounds = false
         self.outterView.layer.cornerRadius = 12
-        self.imgUser.layer.cornerRadius = self.imgUser.frame.size.height / 2
+       
         self.outterView.layer.shadowColor = UIColor.lightGray.cgColor
         self.outterView.layer.shadowOffset = CGSize(width: 3, height: 3)
         self.outterView.layer.shadowOpacity = 0.7
         self.outterView.layer.shadowRadius = 4.0
+        
+        self.imgUser.layer.cornerRadius = self.imgUser.frame.size.height / 2
+        self.imgUser.layer.borderWidth = 1
+        self.imgUser.layer.borderColor = UIColor.orange.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -13,6 +13,9 @@
 		4D1AAFC327AE6BC3007F0EC2 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1AAFC227AE6BC3007F0EC2 /* NetworkReachabilityManager.swift */; };
 		4D1AAFC827AE70AC007F0EC2 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1AAFC627AE70AC007F0EC2 /* UserCell.swift */; };
 		4D1AAFC927AE70AC007F0EC2 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1AAFC727AE70AC007F0EC2 /* UserCell.xib */; };
+		4D1AAFCC27AE7A24007F0EC2 /* LoadMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1AAFCA27AE7A24007F0EC2 /* LoadMoreTableViewCell.xib */; };
+		4D1AAFCD27AE7A24007F0EC2 /* LoadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1AAFCB27AE7A24007F0EC2 /* LoadMoreTableViewCell.swift */; };
+		4D1AAFD327AE7B39007F0EC2 /* TJSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1AAFD227AE7B39007F0EC2 /* TJSpinner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4DDE9BA627AE5CC700C7EA55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDE9BA527AE5CC700C7EA55 /* AppDelegate.swift */; };
 		4DDE9BAA27AE5CC700C7EA55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDE9BA927AE5CC700C7EA55 /* ViewController.swift */; };
 		4DDE9BAD27AE5CC700C7EA55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DDE9BAB27AE5CC700C7EA55 /* Main.storyboard */; };
@@ -37,6 +40,11 @@
 		4D1AAFC227AE6BC3007F0EC2 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		4D1AAFC627AE70AC007F0EC2 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		4D1AAFC727AE70AC007F0EC2 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		4D1AAFCA27AE7A24007F0EC2 /* LoadMoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadMoreTableViewCell.xib; sourceTree = "<group>"; };
+		4D1AAFCB27AE7A24007F0EC2 /* LoadMoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreTableViewCell.swift; sourceTree = "<group>"; };
+		4D1AAFD027AE7AC3007F0EC2 /* TJSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJSpinner.h; sourceTree = "<group>"; };
+		4D1AAFD227AE7B39007F0EC2 /* TJSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TJSpinner.m; path = "../../../../../WebMobi/FaceDate/FaceDate-iOS/Code/FaceDate/FaceDate/ThirdParty/TJSpinner/TJSpinner.m"; sourceTree = "<group>"; };
+		4D1AAFD427AE7BC2007F0EC2 /* DummyAPi-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DummyAPi-Bridging-Header.h"; sourceTree = "<group>"; };
 		4DDE9BA227AE5CC700C7EA55 /* DummyAPi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DummyAPi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDE9BA527AE5CC700C7EA55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DDE9BA927AE5CC700C7EA55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +87,7 @@
 		4D1AAFC127AE6BB0007F0EC2 /* Thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				4D1AAFCE27AE7AC3007F0EC2 /* TJSpinner */,
 				4D1AAFC227AE6BC3007F0EC2 /* NetworkReachabilityManager.swift */,
 			);
 			path = Thirdparty;
@@ -90,8 +99,19 @@
 				4DDE9BA927AE5CC700C7EA55 /* ViewController.swift */,
 				4D1AAFC627AE70AC007F0EC2 /* UserCell.swift */,
 				4D1AAFC727AE70AC007F0EC2 /* UserCell.xib */,
+				4D1AAFCB27AE7A24007F0EC2 /* LoadMoreTableViewCell.swift */,
+				4D1AAFCA27AE7A24007F0EC2 /* LoadMoreTableViewCell.xib */,
 			);
 			path = UserList;
+			sourceTree = "<group>";
+		};
+		4D1AAFCE27AE7AC3007F0EC2 /* TJSpinner */ = {
+			isa = PBXGroup;
+			children = (
+				4D1AAFD227AE7B39007F0EC2 /* TJSpinner.m */,
+				4D1AAFD027AE7AC3007F0EC2 /* TJSpinner.h */,
+			);
+			path = TJSpinner;
 			sourceTree = "<group>";
 		};
 		4DDE9B9927AE5CC700C7EA55 = {
@@ -125,6 +145,7 @@
 				4DDE9BAE27AE5CC800C7EA55 /* Assets.xcassets */,
 				4DDE9BB027AE5CC800C7EA55 /* LaunchScreen.storyboard */,
 				4DDE9BBD27AE5EDC00C7EA55 /* ImportFramework.swift */,
+				4D1AAFD427AE7BC2007F0EC2 /* DummyAPi-Bridging-Header.h */,
 				4DDE9BB327AE5CC800C7EA55 /* Info.plist */,
 			);
 			path = DummyAPi;
@@ -238,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D1AAFCC27AE7A24007F0EC2 /* LoadMoreTableViewCell.xib in Resources */,
 				4D1AAFC927AE70AC007F0EC2 /* UserCell.xib in Resources */,
 				4DDE9BB227AE5CC800C7EA55 /* LaunchScreen.storyboard in Resources */,
 				4DDE9BAF27AE5CC800C7EA55 /* Assets.xcassets in Resources */,
@@ -301,11 +323,13 @@
 				4DDE9BC227AE5F6200C7EA55 /* HRToast+UIView.swift in Sources */,
 				4DDE9BCA27AE608100C7EA55 /* APIManager.swift in Sources */,
 				4DDE9BC727AE600600C7EA55 /* UICollectionViewExt.swift in Sources */,
+				4D1AAFD327AE7B39007F0EC2 /* TJSpinner.m in Sources */,
 				4DDE9BA627AE5CC700C7EA55 /* AppDelegate.swift in Sources */,
 				4D1AAFC827AE70AC007F0EC2 /* UserCell.swift in Sources */,
 				4DDE9BC427AE5F7F00C7EA55 /* AppUrl.swift in Sources */,
 				4DDE9BCC27AE614000C7EA55 /* Constant.swift in Sources */,
 				4D1AAFC027AE6B22007F0EC2 /* UIViewControllerExt.swift in Sources */,
+				4D1AAFCD27AE7A24007F0EC2 /* LoadMoreTableViewCell.swift in Sources */,
 				4DDE9BBE27AE5EDC00C7EA55 /* ImportFramework.swift in Sources */,
 				4DDE9BC027AE5F1800C7EA55 /* AppModel.swift in Sources */,
 				4D1AAFBC27AE6709007F0EC2 /* Enums.swift in Sources */,
@@ -475,6 +499,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Explore.DummyAPi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "DummyAPi/DummyAPi-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -505,6 +530,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Explore.DummyAPi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "DummyAPi/DummyAPi-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
