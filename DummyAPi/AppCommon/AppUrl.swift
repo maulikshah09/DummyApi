@@ -22,10 +22,10 @@ let apiVersion2 = "v2/"
  
 
 // MARK:- API URl
-enum URLS : String {
+enum AppUrls : String {
     
-    case logIn                    = "login"
-    
+    case getUserList                    = "user"
+
     var raw: String {
         return  BASE_URL + self.rawValue
     }

@@ -19,13 +19,7 @@
 @_exported import SafariServices // safri view
 @_exported import AuthenticationServices // apple login
 
-
-//Thirdparty
-@_exported import SDWebImage
-@_exported import GoogleSignIn
-@_exported import GooglePlaces
-@_exported import AMProgressHUD
-
+ 
 
 //@_exported import FacebookCore
-//@_exported import FacebookLogin
+@_exported import SDWebImage

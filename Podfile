@@ -7,5 +7,5 @@ target 'DummyAPi' do
 
   # Pods for DummyAPi
   pod 'SVProgressHUD'
-
+  pod 'SDWebImage', '~> 5.0'
 end

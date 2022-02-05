@@ -10,7 +10,7 @@ import SVProgressHUD
 
 
 
-var headerInfo = ["lang":"en"]
+var headerInfo = ["app-id":"61fe250a611ffea87335281b"]
 
 fileprivate extension Data {
     mutating func append(_ string: String) {
@@ -277,28 +277,3 @@ extension URLSession {
         }
     }
 }
-
-
-
-
-//
-//enum HttpErrors: String {
-//    case code400 = "Bad Request"
-//    case code401 = "unauthorized"
-//    case code402 = "Payment Required"
-//    case code403 = "Forbidden"
-//    case code404 = "Page not Found"
-//
-//    var description : String {
-//        return self.rawValue
-//    }
-//}
-//
-//
-//enum ResponseCode: Int {
-//    case created = 201
-//    case unauthorised = 401
-//    case unacceptable = 409
-//    case unprocessableEntity = 422
-//    case invalidUserRole = 403
-//}

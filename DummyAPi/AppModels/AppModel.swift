@@ -13,44 +13,39 @@ import UIKit
 
 struct BlankData: Codable {}
 
-struct BlankUserAuth: Codable {
-    
-    private var message: UncertainValue<String,[String:String]>
-
-    var messageInfo : String? {
-        get {
-            if let msg = message.uValue{
-                return msg.values.joined(separator: ",\n")
-            }else{
-                return  self.message.tValue ?? ""
-            }
-        }
-    }
-}
 
 struct BlankResponseData : Decodable {
 }
   
 
-//--------- Default Model FOR  EVERY API--------------
-struct FaceDateModel <T:Decodable>: Decodable {
-    private var message: UncertainValue<String,[String:String]>
-   
-    var messageInfo : String? {
-        get {
-            if let msg = message.uValue{
-                return msg.values.joined(separator: ",\n")
-            }else{
-                return  self.message.tValue ?? ""
-            }
-        }
-    }
-    
-    let status : Bool?
-    var data:T?
-    var isPlanExpired : Bool?
-    let pagination: Pagination?
+////--------- Default Model FOR  EVERY API--------------
+//struct FaceDateModel <T:Decodable>: Decodable {
+//    private var message: UncertainValue<String,[String:String]>
+//
+//    var messageInfo : String? {
+//        get {
+//            if let msg = message.uValue{
+//                return msg.values.joined(separator: ",\n")
+//            }else{
+//                return  self.message.tValue ?? ""
+//            }
+//        }
+//    }
+//
+//    let status : Bool?
+//    var data:T?
+//    var isPlanExpired : Bool?
+//    let pagination: Pagination?
+//}
+
+
+struct UserModel : Decodable {
+    var total,page,limit: Int?
+    var data :[UserListModel]?
 }
 
+struct UserListModel : Decodable{
+    var firstName,id,lastName,picture,title : String?
+}
 
  

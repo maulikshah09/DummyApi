@@ -73,3 +73,13 @@ public extension NSObject {
         }
     }
 }
+
+
+public extension String {
+    func toJsonObject() -> Any? {
+        if let data = self.data(using: .utf8) {
+            return try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+        }
+        return nil
+    }
+}
