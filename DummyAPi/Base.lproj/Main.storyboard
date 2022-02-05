@@ -207,92 +207,54 @@
                     </view>
                     <navigationItem key="navigationItem" id="Nf0-9j-Gta"/>
                     <connections>
+                        <outlet property="createPost" destination="87a-dd-Ndy" id="N1n-z9-TfU"/>
                         <outlet property="tblPost" destination="Fou-RA-IKj" id="xAG-CJ-FU8"/>
-                        <segue destination="weX-Cf-sRf" kind="show" identifier="CreateUserVC" id="tCN-Z5-pGT"/>
+                        <segue destination="weX-Cf-sRf" kind="show" identifier="PostDetailVC" id="tCN-Z5-pGT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1lc-zb-hPF" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="835" y="870"/>
         </scene>
-        <!--View Controller-->
+        <!--Post DetailVC-->
         <scene sceneID="IMy-Zv-1YP">
             <objects>
-                <viewController id="weX-Cf-sRf" sceneMemberID="viewController">
+                <viewController id="weX-Cf-sRf" customClass="PostDetailVC" customModule="DummyAPi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7vU-PD-5QX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="oIj-U9-2JL">
-                                <rect key="frame" x="12" y="103" width="390" height="232"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nxW-Ae-SRi" customClass="AppTextField" customModule="DummyAPi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="52"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="52" id="dhk-6n-KJd"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                <real key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yOs-fi-KKd" customClass="AppTextField" customModule="DummyAPi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="90" width="390" height="52"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                <real key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iY9-Uy-p0q" customClass="AppTextField" customModule="DummyAPi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="180" width="390" height="52"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                <real key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLQ-pj-L5F" customClass="AppButton" customModule="DummyAPi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="810" width="414" height="52"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iTw-J1-61S">
+                                <rect key="frame" x="107" y="98" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="0gY-Vc-N7c"/>
+                                    <constraint firstAttribute="width" constant="200" id="aoM-vo-5Cq"/>
+                                    <constraint firstAttribute="height" constant="200" id="hyl-dt-H9m"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title=""/>
-                                <connections>
-                                    <action selector="btnCreateUpdatePress:" destination="weX-Cf-sRf" eventType="touchUpInside" id="ETp-1Y-HKb"/>
-                                </connections>
-                            </button>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jU-3a-DS6">
+                                <rect key="frame" x="10" y="318" width="394" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8GM-Xr-ATn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8GM-Xr-ATn" firstAttribute="trailing" secondItem="OLQ-pj-L5F" secondAttribute="trailing" id="FTy-qO-jbn"/>
-                            <constraint firstItem="oIj-U9-2JL" firstAttribute="leading" secondItem="8GM-Xr-ATn" secondAttribute="leading" constant="12" id="FW7-Mi-hgj"/>
-                            <constraint firstItem="oIj-U9-2JL" firstAttribute="top" secondItem="8GM-Xr-ATn" secondAttribute="top" constant="15" id="Nh8-xF-E9w"/>
-                            <constraint firstItem="8GM-Xr-ATn" firstAttribute="trailing" secondItem="oIj-U9-2JL" secondAttribute="trailing" constant="12" id="SsE-4y-4Ph"/>
-                            <constraint firstItem="8GM-Xr-ATn" firstAttribute="bottom" secondItem="OLQ-pj-L5F" secondAttribute="bottom" id="dYE-Tu-x9K"/>
-                            <constraint firstItem="OLQ-pj-L5F" firstAttribute="leading" secondItem="8GM-Xr-ATn" secondAttribute="leading" id="ioH-Ss-ger"/>
+                            <constraint firstItem="iTw-J1-61S" firstAttribute="centerX" secondItem="7vU-PD-5QX" secondAttribute="centerX" id="3mQ-XZ-uA8"/>
+                            <constraint firstItem="8jU-3a-DS6" firstAttribute="leading" secondItem="8GM-Xr-ATn" secondAttribute="leading" constant="10" id="ZRz-Vu-DTz"/>
+                            <constraint firstItem="8GM-Xr-ATn" firstAttribute="trailing" secondItem="8jU-3a-DS6" secondAttribute="trailing" constant="10" id="eoD-HY-kJw"/>
+                            <constraint firstItem="8jU-3a-DS6" firstAttribute="top" secondItem="iTw-J1-61S" secondAttribute="bottom" constant="20" id="j3D-ss-9v3"/>
+                            <constraint firstItem="iTw-J1-61S" firstAttribute="top" secondItem="8GM-Xr-ATn" secondAttribute="top" constant="10" id="mE6-xF-QK7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Sgj-Lf-E15">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="trash" id="w9L-FP-i4T"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="btnCreateorUpdate" destination="OLQ-pj-L5F" id="Abg-Dj-weJ"/>
-                        <outlet property="btnDelete" destination="w9L-FP-i4T" id="kBg-2r-93b"/>
-                        <outlet property="txtEmail" destination="iY9-Uy-p0q" id="2qH-OC-yZL"/>
-                        <outlet property="txtFirstName" destination="nxW-Ae-SRi" id="DxE-Pq-sIk"/>
-                        <outlet property="txtLastName" destination="yOs-fi-KKd" id="4hQ-qa-xqr"/>
+                        <outlet property="btnDelete" destination="w9L-FP-i4T" id="yCH-X2-1x6"/>
+                        <outlet property="imgPost" destination="iTw-J1-61S" id="jD8-vn-wp4"/>
+                        <outlet property="lblPostName" destination="8jU-3a-DS6" id="fmw-mq-mvt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sCE-cu-YXV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

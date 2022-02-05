@@ -59,6 +59,16 @@
                                     <outlet property="delegate" destination="KGk-i7-Jjw" id="acM-gn-X7z"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWd-Lz-L1P">
+                                <rect key="frame" x="357" y="10" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="CFH-yA-hSo"/>
+                                    <constraint firstAttribute="width" constant="30" id="Saa-jp-mdd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -70,6 +80,8 @@
                             <constraint firstItem="KJM-QA-GIc" firstAttribute="leading" secondItem="vbW-Nv-vha" secondAttribute="trailing" constant="10" id="RTF-al-XCZ"/>
                             <constraint firstItem="miu-kF-JVi" firstAttribute="top" secondItem="KJM-QA-GIc" secondAttribute="bottom" constant="10" id="Y84-sg-8Ag"/>
                             <constraint firstItem="vbW-Nv-vha" firstAttribute="leading" secondItem="S3Z-Ji-80w" secondAttribute="leading" constant="10" id="buL-ub-xb3"/>
+                            <constraint firstItem="hWd-Lz-L1P" firstAttribute="top" secondItem="S3Z-Ji-80w" secondAttribute="top" constant="10" id="fn8-YH-HV1"/>
+                            <constraint firstAttribute="trailing" secondItem="hWd-Lz-L1P" secondAttribute="trailing" constant="10" id="mnM-yo-Ouy"/>
                             <constraint firstItem="vbW-Nv-vha" firstAttribute="top" secondItem="S3Z-Ji-80w" secondAttribute="top" constant="12" id="tt5-b6-zNb"/>
                         </constraints>
                     </view>

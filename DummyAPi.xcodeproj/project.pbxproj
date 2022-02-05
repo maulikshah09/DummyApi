@@ -24,6 +24,7 @@
 		4D1AAFE727AEA184007F0EC2 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1AAFE527AEA184007F0EC2 /* PostCell.xib */; };
 		4D1AAFEA27AEA41F007F0EC2 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1AAFE827AEA41F007F0EC2 /* TagCell.swift */; };
 		4D1AAFEB27AEA41F007F0EC2 /* TagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1AAFE927AEA41F007F0EC2 /* TagCell.xib */; };
+		4D1AAFEE27AEBE52007F0EC2 /* PostDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1AAFED27AEBE52007F0EC2 /* PostDetailVC.swift */; };
 		4DDE9BA627AE5CC700C7EA55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDE9BA527AE5CC700C7EA55 /* AppDelegate.swift */; };
 		4DDE9BAA27AE5CC700C7EA55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDE9BA927AE5CC700C7EA55 /* ViewController.swift */; };
 		4DDE9BAD27AE5CC700C7EA55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DDE9BAB27AE5CC700C7EA55 /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 		4D1AAFE527AEA184007F0EC2 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		4D1AAFE827AEA41F007F0EC2 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		4D1AAFE927AEA41F007F0EC2 /* TagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCell.xib; sourceTree = "<group>"; };
+		4D1AAFED27AEBE52007F0EC2 /* PostDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailVC.swift; sourceTree = "<group>"; };
 		4DDE9BA227AE5CC700C7EA55 /* DummyAPi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DummyAPi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDE9BA527AE5CC700C7EA55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DDE9BA927AE5CC700C7EA55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,14 @@
 			path = PostViewController;
 			sourceTree = "<group>";
 		};
+		4D1AAFEC27AEBE29007F0EC2 /* PostDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				4D1AAFED27AEBE52007F0EC2 /* PostDetailVC.swift */,
+			);
+			path = PostDetailVC;
+			sourceTree = "<group>";
+		};
 		4DDE9B9927AE5CC700C7EA55 = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +226,7 @@
 		4DDE9BBB27AE5E9700C7EA55 /* AppViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4D1AAFEC27AEBE29007F0EC2 /* PostDetailVC */,
 				4D1AAFDD27AE9D08007F0EC2 /* PostViewController */,
 				4D1AAFD527AE83A1007F0EC2 /* CreateUser */,
 				4D1AAFC427AE7091007F0EC2 /* UserList */,
@@ -365,6 +376,7 @@
 				4DDE9BC227AE5F6200C7EA55 /* HRToast+UIView.swift in Sources */,
 				4DDE9BCA27AE608100C7EA55 /* APIManager.swift in Sources */,
 				4D1AAFDA27AE8504007F0EC2 /* AppButton.swift in Sources */,
+				4D1AAFEE27AEBE52007F0EC2 /* PostDetailVC.swift in Sources */,
 				4DDE9BC727AE600600C7EA55 /* UICollectionViewExt.swift in Sources */,
 				4D1AAFD327AE7B39007F0EC2 /* TJSpinner.m in Sources */,
 				4DDE9BA627AE5CC700C7EA55 /* AppDelegate.swift in Sources */,

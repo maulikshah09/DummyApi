@@ -10,13 +10,16 @@ import UIKit
 class PostVC: UIViewController {
     
     var info : UserListModel?
+    var postInfo : PostListModel?
+    
     var arrPostList : [PostListModel]?
     var currentPage = 0
     var totalPages = 0
     var circularSpinner = TJSpinner()
     var isUpdate = false
     
-   // @IBOutlet weak var btnCreateUser: AppButton!
+    @IBOutlet weak var createPost: AppButton!
+    // @IBOutlet weak var btnCreateUser: AppButton!
     @IBOutlet weak var tblPost: UITableView!
     
     override func viewDidLoad() {
@@ -27,6 +30,7 @@ class PostVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         currentPage = 0
         callWebservice(#selector(getPostList), forTarget: self)
+        self.createPost.setTitle(AlertTitle.createPost.localized, for: .normal)
     }
   
     @IBAction func btnCreateUserPress(_ sender: Any) {
@@ -38,7 +42,7 @@ class PostVC: UIViewController {
 // MARK:-  ----------- Functions -------------
 extension PostVC {
     func setup(){
-        self.title = AppNavigationTitle.ListUser.localized
+        self.title = AppNavigationTitle.PostofUser.localized
         tblPost.register(cellType: PostCell.self, bundle: nil)
         tblPost.register(cellType: LoadMoreTableViewCell.self, bundle: nil)
         
@@ -46,19 +50,10 @@ extension PostVC {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == CreateUserVC.className {
-            let detail = segue.destination as? CreateUserVC
-            detail?.userInfo = info
+        if segue.identifier == PostDetailVC.className {
+            let detail = segue.destination as? PostDetailVC
+            detail?.info = postInfo
         }
-    }
-    
-    @objc func viewProfile(sender : UIButton){
-     //   info = arrPostList?[sender.tag]
-        self.performSegue(withIdentifier:CreateUserVC.className , sender: self)
-    }
-    
-    @objc func viewPost(sender : UIButton){
-        
     }
 }
 
@@ -93,6 +88,11 @@ extension PostVC : UITableViewDelegate,UITableViewDataSource {
             self.callWebservice(#selector(self.getPostList), forTarget: self)
             return loadingCell(indexPath: indexPath)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        postInfo = arrPostList?[indexPath.row]
+        self.performSegue(withIdentifier:PostDetailVC.className , sender: self)
     }
     
     func userListCell(indexPath : IndexPath) -> PostCell{

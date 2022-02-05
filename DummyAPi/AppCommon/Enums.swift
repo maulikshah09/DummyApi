@@ -17,6 +17,7 @@ public enum AppImages : String{
 enum AppNavigationTitle : String {
     
     case ListUser = "User List"
+    case PostofUser = "User Post List"
     
     var localized: String {
         return self.rawValue //.localized
@@ -34,6 +35,10 @@ enum AlertTitle : String {
     case no                    = "No"
     case createUser            = "Create User"
     case updateUser            = "Update User"
+    case createPost            = "Create Post"
+    case firstName             = "First name"
+    case lastName              = "Last name"
+    case email                 = "email"
     
     var localized: String {
         return self.rawValue //.localized

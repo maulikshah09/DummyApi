@@ -36,6 +36,9 @@ class CreateUserVC: UIViewController {
             self.btnDelete.isEnabled = false
             self.btnDelete.tintColor = .clear
         }
+        self.txtFirstName.placeholder = AlertTitle.firstName.localized
+        self.txtLastName.placeholder = AlertTitle.lastName.localized
+        self.txtEmail.placeholder = AlertTitle.email.localized
     }
    
     @IBAction func btnCreateUpdatePress(_ sender: Any) {
